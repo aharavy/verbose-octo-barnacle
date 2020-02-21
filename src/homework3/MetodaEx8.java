@@ -10,11 +10,12 @@ rand.nextInt() ). Это число – количесво денег в руб�
     public static void main(String[] args) {
         int number;
         String padezh;
-        Random rnd = new Random();
-        number=rnd.nextInt();
-        if(Math.abs(number%10)==1){
+        number =12;
+//        Random rnd = new Random();
+//        number=rnd.nextInt();
+        if(Math.abs(number%10)==1 && (number<10 || number>20)){
             padezh="рубль";
-        }else if(Math.abs(number%10)==2 || Math.abs(number%10)==3 || Math.abs(number%10)==4){
+        }else if((Math.abs(number%10)==2 || Math.abs(number%10)==3 || Math.abs(number%10)==4)&& (number<10 || number>20)){
             padezh="рубля";
         } else {
             padezh="рублей";

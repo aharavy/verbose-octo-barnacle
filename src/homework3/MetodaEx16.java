@@ -1,10 +1,10 @@
 package homework3;
 
 public class MetodaEx16 {
+    /*Определите сумму элементов одномерного массива, расположенных между
+минимальным и максимальным значениями.*/
     public static void main(String[] args) {
         int[] arr = new int[10];
-        int minMain;
-        int maxMain;
         int min=0;
         int max=0;
         int indexMin=0;
@@ -16,26 +16,20 @@ public class MetodaEx16 {
         for (int i = 0; i < arr.length; i++) {
             arr[i] =(int) (Math.random()*20);
         }
-        minMain=arr[0];
-        maxMain=arr[0];
+        min=arr[0];
+        max=arr[0];
 
-
-        for (int i = 0; i <arr.length-1 ; i++) {
-            if(arr[0]<arr[i+1]){
-                max=arr[i+1];
+        for (int i = 1; i <arr.length ; i++) {
+            if(arr[i]<min){
+                min=arr[i];
+                indexMin=i;
             }
-            else {
-                min=arr[i+1];
-            }
-            if(minMain>min){
-                minMain=min;
-                indexMin=i+1;
-            }
-            if (maxMain<max){
-                maxMain=max;
-                indexMax=i+1;
+            if (arr[i]>max){
+                max=arr[i];
+                indexMax=i;
             }
         }
+
         for (int i = 0; i <arr.length ; i++) {
             System.out.print(arr[i]+"| ");
         }
@@ -49,8 +43,8 @@ public class MetodaEx16 {
                 sum+=arr[i];
             }
         }
-        System.out.println("\nВаш минимальный элемент:"+minMain + " |его индекс в массиве:"+ indexMin);
-        System.out.println("Ваш максимальный элемент:"+maxMain + " |eго индекс в массиве:"+ indexMax);
+        System.out.println("\nВаш минимальный элемент:"+min + " |его индекс в массиве:"+ indexMin);
+        System.out.println("Ваш максимальный элемент:"+max + " |eго индекс в массиве:"+ indexMax);
         System.out.println("Сумма между минимальным и максимальным элементом:" + sum);
     }
 }
